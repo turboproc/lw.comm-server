@@ -1992,25 +1992,25 @@ io.sockets.on('connection', function (appSocket) {
         if (isConnected) {
             switch (data) {
             case 'x':
-                if (firmware == "marlin")
+                if (firmware == "marlin" || firmware == "tinyg")
                     addQ('G92 X0');
                 else
                     addQ('G10 L20 P0 X0');
                 break;
             case 'y':
-                if (firmware == "marlin")
+                if (firmware == "marlin" || firmware == "tinyg")
                     addQ('G92 Y0');
                 else
                     addQ('G10 L20 P0 Y0');
                 break;
             case 'z':
-                if (firmware == "marlin")
+                if (firmware == "marlin" || firmware == "tinyg")
                     addQ('G92 Z0');
                 else
                     addQ('G10 L20 P0 Z0');
                 break;
             case 'a':
-                if (firmware == "marlin")
+                if (firmware == "marlin" || firmware == "tinyg")
                     addQ('G92 E0');
                 else
                     addQ('G10 L20 P0 A0');
@@ -2022,6 +2022,7 @@ io.sockets.on('connection', function (appSocket) {
                     break;
                 case 'marlinkimbra':
                 case 'marlin':
+                case 'tinyg': 
                     addQ('G92 X0 Y0 Z0');
                     break;
                 default:
@@ -2030,7 +2031,7 @@ io.sockets.on('connection', function (appSocket) {
                 }
                 break;
             case 'xyza':
-                if (firmware == "marlin")
+                if (firmware == "marlin" || firmware == "tinyg")
                     addQ('G92 X0 Y0 Z0 E0');
                 else
                     addQ('G10 L20 P0 X0 Y0 Z0 A0');
