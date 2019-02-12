@@ -1992,7 +1992,7 @@ io.sockets.on('connection', function (appSocket) {
         if (isConnected) {
             switch (data) {
             case 'x':
-                if (firmware == "marlin")
+                if (firmware == "marlin" || firmware == "tinyg")
                     addQ('G92 X0');
                 else
                     addQ('G10 L20 P0 X0');
