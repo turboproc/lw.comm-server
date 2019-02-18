@@ -296,6 +296,7 @@ io.sockets.on('connection', function (appSocket) {
 
                 // Serial port events -----------------------------------------------
                 port.on('open', function () {
+					port.set({cts:true});
                     io.sockets.emit('activePort', {port: port.path, baudrate: port.settings.baudRate});
                     io.sockets.emit('connectStatus', 'opened:' + port.path);
                     if (config.resetOnConnect == 1) {
